@@ -2,8 +2,8 @@
 Exam 1, problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Dylan Frazee.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -102,8 +102,37 @@ def problem3(point, length, delta, window):
     # TODO (continued):         and colors per the specified pattern.
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
+    vline = rg.Line(rg.Point(point.x,point.y),rg.Point(point.x,point.y+length))
+    vline.thickness = 3
+    vline.color = 'black'
+    vline.attach_to(window)
+    p = point.y
+    for k in range((length//delta) + 1):
+        line = rg.Line(rg.Point(point.x,p),rg.Point(point.x+length + (20*k),p))
+        p = p + delta
+        line.thickness = 3
+        if k == 0:
+            line.color = 'magenta'
+        if k == 1:
+            line.color = 'cyan'
+        if k == 2:
+            line.color = 'spring green'
+        if k == 3:
+            line.color = 'magenta'
+        if k == 4:
+            line.color = 'cyan'
+        if k == 5:
+            line.color = 'spring green'
+        if k == 6:
+            line.color = 'magenta'
+        if k == 7:
+            line.color = 'cyan'
+        if k == 8:
+            line.color = 'spring green'
 
+        line.attach_to(window)
 
+    window.render()
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
