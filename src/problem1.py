@@ -89,7 +89,7 @@ def problem1a(rectangle, square, thickness, window):
       :type window:    rg.RoseWindow
     """
     # --------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.  SEE THE PICTURES in the PDF!
+    # DONE: 2. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
     rectangle.attach_to(window)
@@ -165,8 +165,14 @@ def problem1b(point, win, width, height, color):
     # TODO: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
+    point.attach_to(win)
+    f = point.x
+    g = point.y
+    ellipse = rg.Ellipse(rg.Point(f,g),rg.Point(f-width,g + height))
+    ellipse.fill_color = color
 
-
+    ellipse.attach_to(win)
+    win.render()
 # ------------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ------------------------------------------------------------------------------
